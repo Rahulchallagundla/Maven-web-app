@@ -2,29 +2,29 @@ pipeline {
     agent any
 
     stages {
-        stage('Git Checkout SCM') {
+        stage('SCM git cloneing') {
             steps {
-                git 'https://github.com/mmbabu0705/maven-web-app.git'
+                git 'https://github.com/Rahulchallagundla/Maven-web-app.git'
             }
         }
-        stage('Compile the Code') {
+         stage('code compling') {
             steps {
                 sh 'mvn compile'
             }
         }
-        stage('Test the Code') {
+         stage('code testing') {
             steps {
                 sh 'mvn test'
             }
         }
-        stage('Package the Code') {
+         stage('code packageing') {
             steps {
                 sh 'mvn package'
             }
         }
-         stage('Deploy tomcat') {
+        stage('deply into tomcat server') {
             steps {
-                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat_cred', path: '', url: 'http://13.235.64.32:8080/')], contextPath: null, war: '**/*.war'
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat-CRD', path: '', url: 'http://65.0.251.144:8080/')], contextPath: null, war: '**/*.war'
             }
         }
     }
