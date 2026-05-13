@@ -1,123 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login App</title>
+    <title>SRH vs MI Squad</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f4f4f4; }
+        table { border-collapse: collapse; width: 80%; margin: 20px 0; background: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        
+        /* Table Headers */
+        thead { background-color: #333; color: white; }
+        
+        /* SRH Styling (Orange) */
+        .srh-cell { border-left: 5px solid #FF822A; font-weight: bold; color: #d35400; }
+        
+        /* MI Styling (Blue) */
+        .mi-cell { border-left: 5px solid #004BA0; font-weight: bold; color: #004BA0; }
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
-
-    body{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(135deg,#4facfe,#00f2fe);
-    }
-
-    .login-box{
-      background:white;
-      padding:40px;
-      width:350px;
-      border-radius:15px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .login-box h2{
-      text-align:center;
-      margin-bottom:25px;
-      color:#333;
-    }
-
-    .input-box{
-      margin-bottom:20px;
-    }
-
-    .input-box input{
-      width:100%;
-      padding:12px;
-      border:1px solid #ccc;
-      border-radius:8px;
-      outline:none;
-      font-size:16px;
-    }
-
-    .input-box input:focus{
-      border-color:#4facfe;
-    }
-
-    button{
-      width:100%;
-      padding:12px;
-      border:none;
-      border-radius:8px;
-      background:#4facfe;
-      color:white;
-      font-size:16px;
-      cursor:pointer;
-      transition:0.3s;
-    }
-
-    button:hover{
-      background:#00c6fb;
-    }
-
-    .message{
-      margin-top:15px;
-      text-align:center;
-      font-size:14px;
-    }
-  </style>
+        tr:hover { background-color: #f1f1f1; }
+        caption { font-size: 1.5rem; margin: 10px; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-  <div class="login-box">
-    <h2>Login</h2>
-
-    <div class="input-box">
-      <input type="text" id="username" placeholder="Enter Username">
-    </div>
-
-    <div class="input-box">
-      <input type="password" id="password" placeholder="Enter Password">
-    </div>
-
-    <button onclick="login()">Login</button>
-
-    <div class="message" id="message"></div>
-  </div>
-
-  <script>
-    function login() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-      let message = document.getElementById("message");
-
-      // Demo credentials
-      let validUser = "admin";
-      let validPass = "12345";
-
-      if(username === "" || password === "") {
-        message.style.color = "red";
-        message.innerText = "Please fill all fields!";
-      }
-      else if(username === validUser && password === validPass) {
-        message.style.color = "green";
-        message.innerText = "Login Successful!";
-      }
-      else {
-        message.style.color = "red";
-        message.innerText = "Invalid Username or Password";
-      }
-    }
-  </script>
+    <table>
+        <caption>IPL Team Squad: SRH vs MI</caption>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Sunrisers Hyderabad (SRH)</th>
+                <th>Mumbai Indians (MI)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td class="srh-cell">Pat Cummins (C)</td><td class="mi-cell">Hardik Pandya (C)</td></tr>
+            <tr><td>2</td><td class="srh-cell">Abhishek Sharma</td><td class="mi-cell">Rohit Sharma</td></tr>
+            <tr><td>3</td><td class="srh-cell">Travis Head</td><td class="mi-cell">Ishan Kishan</td></tr>
+            <tr><td>4</td><td class="srh-cell">Aiden Markram</td><td class="mi-cell">Suryakumar Yadav</td></tr>
+            <tr><td>5</td><td class="srh-cell">Heinrich Klaasen</td><td class="mi-cell">Tilak Varma</td></tr>
+            <tr><td>6</td><td class="srh-cell">Nitish Kumar Reddy</td><td class="mi-cell">Tim David</td></tr>
+            <tr><td>7</td><td class="srh-cell">Abdul Samad</td><td class="mi-cell">Romario Shepherd</td></tr>
+            <tr><td>8</td><td class="srh-cell">Shahbaz Ahmed</td><td class="mi-cell">Gerald Coetzee</td></tr>
+            <tr><td>9</td><td class="srh-cell">Bhuvneshwar Kumar</td><td class="mi-cell">Jasprit Bumrah</td></tr>
+            <tr><td>10</td><td class="srh-cell">Mayank Markande</td><td class="mi-cell">Piyush Chawla</td></tr>
+            <tr><td>11</td><td class="srh-cell">T. Natarajan</td><td class="mi-cell">Akash Madhwal</td></tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
